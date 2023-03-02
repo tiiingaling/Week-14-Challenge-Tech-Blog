@@ -35,6 +35,13 @@ User.init(
         len: [8],
       },
     },
+    post_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'post',
+        key: 'id',
+      },
+    },
   },
   {
     hooks: {

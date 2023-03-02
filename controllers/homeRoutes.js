@@ -79,4 +79,24 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.post('/post/:id/comment', withAuth, async (req, res) => {
+  try {
+    // Get the blog post that the comment is associated with
+    const postData = await Post.findByPk(req.params.id);
+    const post = postData.get({ plain: true });
+
+    // Create a new comment using the Comment model
+    const newComment = await Comment.create({
+      comment_text: req.body.comment_text,
+      post_id: post.id,
+      user_id: req.session.user_id,
+    });
+
+    // Redirect the user back to the blog post page
+    res.redirect(`/post/${post.id}`);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

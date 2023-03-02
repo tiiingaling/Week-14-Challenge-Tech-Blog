@@ -24,6 +24,13 @@ Comment.init(
             allowNull: false,
             defaultValue: DataTypes.NOW,
           },
+        post_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'post',
+              key: 'id',
+            },
+          },
     },
 
     {

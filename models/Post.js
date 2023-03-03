@@ -11,11 +11,11 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    body: {
       type: DataTypes.TEXT('medium'),
     },
     date_created: {
@@ -30,7 +30,7 @@ Post.init(
         key: 'id',
       },
     },
-    post_id: {
+    comment_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'comment',

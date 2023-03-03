@@ -1,6 +1,7 @@
-document.querySelector('#comment-form').addEventListener('submit', async (event) => {
+const addComment = async (event) => {
     event.preventDefault();
-  
+    console.log('comment content:', commentText)
+
     const commentText = document.querySelector('#comment-text').value.trim();
   
     if (commentText) {
@@ -16,4 +17,21 @@ document.querySelector('#comment-form').addEventListener('submit', async (event)
         alert('Failed to add comment');
       }
     }
-  });
+  };
+
+// const editComment = 
+
+// const deleteComment = 
+
+document
+    .querySelector('#comment-form')
+    .addEventListener('submit', addComment);
+
+
+// document
+//     .querySelector('.comment-list')
+//     .addEventListener('click', editComment);
+
+// document
+    // .querySelector('.comment-list')
+    // .addEventListener('click', deleteComment);

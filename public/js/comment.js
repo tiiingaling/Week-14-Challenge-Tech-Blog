@@ -1,6 +1,5 @@
 const addComment = async (event) => {
     event.preventDefault();
-    console.log('comment content:', commentText)
 
     const commentText = document.querySelector('#comment-text').value.trim();
   

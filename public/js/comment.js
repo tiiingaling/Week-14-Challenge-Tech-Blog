@@ -4,12 +4,12 @@ const addComment = async (event) => {
     const commentText = document.querySelector('#comment-text').value.trim();
   
     if (commentText) {
-      const response = await fetch('/api/comments', {
+      const response = await fetch('/api/comment', {
         method: 'POST',
         body: JSON.stringify({ comment_text: commentText }),
         headers: { 'Content-Type': 'application/json' },
       });
-  
+      console.log('comment added!', commentText)
       if (response.ok) {
         location.reload();
       } else {

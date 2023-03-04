@@ -17,6 +17,7 @@ Post.init(
     },
     body: {
       type: DataTypes.TEXT('medium'),
+      allowNull: false,
     },
     date_created: {
       type: DataTypes.DATE,
@@ -27,13 +28,6 @@ Post.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'id',
-      },
-    },
-    comment_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'comment',
         key: 'id',
       },
     },

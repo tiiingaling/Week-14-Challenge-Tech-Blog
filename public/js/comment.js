@@ -29,10 +29,6 @@ const addComment = async (event) => {
   }
 };
 
-
-document.querySelector('#comment-form').addEventListener('submit', addComment);
-
-
 // const editComment = 
 
 
@@ -56,7 +52,7 @@ const deleteComment = async (event) => {
     button.addEventListener('click', async (event) => {
       const commentId = event.target.getAttribute('data-commentid');
       try {
-        const response = await fetch(`/api/comments/${commentId}`, {
+        const response = await fetch(`/api/comment/${commentId}`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',

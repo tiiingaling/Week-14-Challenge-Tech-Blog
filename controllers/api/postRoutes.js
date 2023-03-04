@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
@@ -46,14 +46,17 @@ router.delete('/:id', withAuth, async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
-      include: [{ model: User }, { model: Comment, include: [User] }],
+      include: [ { model: Comment}],
     });
     console.log(postData.comments); // log the comments data
     const post = postData.get({ plain: true });
     res.render('post', {
       ...post,
+      comments: postData.comments,
       logged_in: req.session.logged_in,
     });
+    
+    console.log('postRoutes:',postData.comments)
   } catch (err) {
     res.status(500).json(err);
   }

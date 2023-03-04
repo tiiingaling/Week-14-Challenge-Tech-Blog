@@ -15,7 +15,7 @@ Comment.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        comment: {
+        commentText: {
             type: DataTypes.TEXT,
             allowNull: true,
         },

@@ -4,14 +4,15 @@
   <p>Posted by {{user.name}} on {{format_date date_created}}</p>
 
 <h3>Comments:</h3>
-<ul>
+<div>
   {{#each comments}}
-    <li>
+    <div>
       <p>{{commentText}}</p>
       <p>Posted by {{name}} on {{format_date this.date_created}}</p>
-    </li>
+    </div>
   {{/each}}
-</ul>
+</div>
+
 
 
   <h3>Leave a Comment:</h3>

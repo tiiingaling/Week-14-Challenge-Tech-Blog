@@ -35,7 +35,7 @@ document.querySelector('#comment-form').addEventListener('submit', addComment);
 
 // const editComment = 
 
-// const deleteComment = 
+
 
 document
     .querySelector('#comment-form')
@@ -47,5 +47,36 @@ document
 //     .addEventListener('click', editComment);
 
 // document
-    // .querySelector('.comment-list')
-    // .addEventListener('click', deleteComment);
+//     .querySelectorAll('.delete-comment')
+//     .addEventListener('click', deleteComment);
+
+const deleteComment = async (event) => {
+  const deleteButtons = document.querySelectorAll('.delete-comment');
+  deleteButtons.forEach((button) => {
+    button.addEventListener('click', async (event) => {
+      const commentId = event.target.getAttribute('data-commentid');
+      try {
+        const response = await fetch(`/api/comments/${commentId}`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        console.log('comment ID: ', commentId)
+        if (response.ok) {
+          // If the response is successful, remove the deleted comment from the DOM
+          event.target.parentNode.remove();
+        } else {
+          // If the response is not successful, display an error message
+          const errorData = await response.json();
+          throw new Error(errorData.message);
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Failed to delete comment');
+      }
+    });
+  });
+};
+
+deleteComment();

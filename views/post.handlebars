@@ -9,6 +9,7 @@
     <div>
       <p>{{commentText}}</p>
       <p>Posted by {{name}} on {{format_date this.date_created}}</p>
+      <button class="delete-comment" data-commentid="{{id}}">Delete</button>
     </div>
   {{/each}}
 </div>

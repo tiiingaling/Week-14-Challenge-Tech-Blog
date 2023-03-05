@@ -42,7 +42,16 @@ router.delete('/:id', withAuth, async (req, res) => {
 });
 
 // edit post
-
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const { title, body } = req.body;
+    const { id } = req.params;
+    const post = await Post.update({ title, body }, { where: { id } });
+    res.status(200).json(post);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // get comments
 router.get('/:id', async (req, res) => {

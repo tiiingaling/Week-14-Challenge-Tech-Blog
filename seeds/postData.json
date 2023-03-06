@@ -1,14 +1,14 @@
 [
   {
     "title": "HTML/CSS",
-    "body": "A mobile app that will send you notifications whenever a concert is playing in your area."
+    "body": "HTML and CSS are the building blocks of the web. HTML provides the structure and content of web pages, while CSS adds visual style and layout. Together, they allow web developers to create rich, interactive experiences that engage users and provide value to businesses and organizations. Understanding the basics of HTML and CSS is essential for anyone looking to get started in web development."
   },
   {
     "title": "Javascript",
-    "body": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!"
+    "body": "JavaScript is a high-level programming language that is widely used for creating interactive web pages and web applications. It is a versatile language that can be used for both front-end and back-end development, as well as for mobile app development and desktop applications. JavaScript is known for its ability to manipulate and modify HTML and CSS dynamically, allowing for a rich and interactive user experience. It is also used for creating complex algorithms, handling server-side operations, and integrating with APIs. In recent years, JavaScript has become one of the most popular programming languages in the world, with a growing community of developers and a wide range of frameworks and libraries available to help streamline development."
   },
   {
     "title": "Node.js",
-    "body": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes."
+    "body": "Node.js is a runtime environment that allows developers to run JavaScript code outside of the web browser. It is built on the V8 JavaScript engine, the same engine used in Google Chrome, and provides a range of powerful features for building server-side applications. With Node.js, developers can use JavaScript to build scalable, high-performance applications that can handle a large number of simultaneous connections. This makes it an ideal choice for building real-time applications such as chat apps, online games, and streaming services. Additionally, Node.js has a large and active community, which means that there are many open-source libraries and tools available to help developers build and deploy Node.js applications quickly and easily."
   }
 ]

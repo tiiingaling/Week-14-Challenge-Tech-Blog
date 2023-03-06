@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
+const sequelize = require('../config/connection');
 
 router.get('/', async (req, res) => {
   try {
@@ -84,6 +85,18 @@ router.get('/login', (req, res) => {
 
 router.get('/new', (req, res) => {
   res.render('newPost');
+});
+
+router.get('/edit/:id', withAuth, async (req, res) => {
+  try {
+    const postId = req.params.id;
+    const postData = await Post.findByPk(postId);
+    const post = postData.get({ plain: true });
+    res.render('editPost', { post, logged_in: req.session.logged_in });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 module.exports = router;

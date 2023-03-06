@@ -5,7 +5,7 @@
     <form
       action="/api/posts/{{post.id}}"
       method="POST"
-      class="edit-post-form"
+      class="form edit-post-form"
       data-id="{{post.id}}"
     >
       <div class="form-group">
@@ -21,15 +21,15 @@
       <div class="form-group">
         <label for="post-content">Post Content:</label>
         <textarea
-          class="edit-post-form form-control-lg"
+          class="form-input"
           id="post-content"
           rows="3"
           name="content"
-        >{{post.content}}</textarea>
+        >{{post.body}}</textarea>
       </div>
       <button type="submit" class="btn btn-primary">Update Post</button>
     </form>
-    <script>console.log(post.title)</script>
+    <script>console.log(post)</script>
     <script src="/js/editPost.js"></script>
   </div>
 </div>

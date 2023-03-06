@@ -44,9 +44,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 // edit post
 router.put('/:id', withAuth, async (req, res) => {
   try {
-    const { title, body } = req.body;
-    const { id } = req.params;
-    const post = await Post.update({ title, body }, { where: { id } });
+    const post = await Post.update({ title: req.body.post_title, body: req.body.post_content }, { where: {id: req.params.id }} );
     res.status(200).json(post);
   } catch (err) {
     res.status(500).json(err);

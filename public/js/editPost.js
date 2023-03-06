@@ -6,7 +6,7 @@ const updateFormHandler = async (event) => {
     const postContent = document.querySelector("textarea[name='content']").value.trim();
     const postTitle = document.querySelector("input[name='title']").value.trim();
 
-    const response = await fetch(`/api/post/${id}`, {
+    const response = await fetch(`/api/posts/${id}`, {
       method: "PUT",
       body: JSON.stringify({
         post_title: postTitle,
